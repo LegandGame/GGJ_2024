@@ -17,6 +17,7 @@ var equipped := "NONE"
 @onready var equipIcon : TextureRect = get_node("%Equipment Icon")
 @onready var scoreLabel : Label= get_node("%Score")
 @onready var countdown : Label = get_node("%Countdown")
+@onready var sprite : AnimatedSprite2D = $PlayerSprite
 
 # dictionary containing references to all the sprites used for swapping current equipment
 var equipDict = {"NONE": null,
@@ -25,6 +26,18 @@ var equipDict = {"NONE": null,
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
+	# play anim
+	if input_direction.length() > 0:
+		if input_direction.x < 0:
+			sprite.play("walkLeft")
+		elif input_direction.x > 0:
+			sprite.play("walkRight")
+		elif input_direction.y < 0:
+			sprite.play("walkUp")
+		elif input_direction.y > 0:
+			sprite.play("walkDown")
+	else:
+		sprite.stop()
 
 func _physics_process(delta):
 	get_input()
