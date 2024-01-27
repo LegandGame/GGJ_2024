@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://hkwew0gbj3sk"]
+
+[ext_resource type="Script" path="res://Options_Screen.gd" id="1_01j0h"]
+
+[node name="Options_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_01j0h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36
+anchor_top = 0.622
+anchor_right = 0.666
+anchor_bottom = 0.935
+offset_left = 0.279968
+offset_top = -0.0560303
+offset_right = -0.231995
+offset_bottom = 0.119934
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Volume"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.849
+anchor_right = 0.106
+anchor_bottom = 0.937
+offset_left = -0.560001
+offset_top = -0.152039
+offset_right = -0.112007
+offset_bottom = -0.176025
+theme_override_font_sizes/font_size = 35
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
