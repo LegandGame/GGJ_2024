@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://buen0a77et5v7"]
+[gd_scene load_steps=8 format=3 uid="uid://buen0a77et5v7"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_lmvuh"]
 [ext_resource type="Texture2D" uid="uid://dixsi6m7484rk" path="res://icon.svg" id="1_qcuyt"]
+[ext_resource type="Texture2D" uid="uid://him8iq6f4lp6" path="res://Assets/Free Fantasy Dreamland - Sprites/Unity, Godot, GameMaker/Character_001.png" id="2_45kj0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ojq3c"]
 radius = 28.0
@@ -30,7 +31,10 @@ motion_mode = 1
 script = ExtResource("1_lmvuh")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_qcuyt")
+scale = Vector2(4, 4)
+texture = ExtResource("2_45kj0")
+region_enabled = true
+region_rect = Rect2(5, 7, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ojq3c")
