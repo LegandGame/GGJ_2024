@@ -19,7 +19,8 @@ var equipped := "NONE"
 @onready var countdown : Label = get_node("%Countdown")
 
 # dictionary containing references to all the sprites used for swapping current equipment
-var equipDict = {"NONE": null}
+var equipDict = {"NONE": null,
+				"WOOPIE": "res://Assets/EquipIcons/WoopieCushion.png"}
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -52,4 +53,7 @@ func change_equip(newEquip : String):
 	newEquip = newEquip.capitalize()
 	assert(newEquip in equipDict.keys())
 	equipped = newEquip
-	equipIcon.texture = equipDict[equipped]
+	if equipDict[equipped] == null:
+		equipIcon.texture = null
+	else:
+		equipIcon.texture = equipDict[equipped]
