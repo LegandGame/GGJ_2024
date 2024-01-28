@@ -38,6 +38,8 @@ func get_input():
 			sprite.play("walkDown")
 	else:
 		sprite.stop()
+	#if player position.y >= 27:
+		#player position.y = 26
 
 func _physics_process(delta):
 	get_input()

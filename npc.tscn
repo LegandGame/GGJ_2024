@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://NPC.gd" id="1_8sd8m"]
 [ext_resource type="Texture2D" uid="uid://dmd6ws380l76d" path="res://Assets/Free Fantasy Dreamland - Sprites/16x16/Character_007.png" id="2_446yq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pouvw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_87gof"]
 atlas = ExtResource("2_446yq")
 region = Rect2(0, 0, 24, 24)
 
@@ -75,7 +75,7 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pouvw")
+"texture": SubResource("AtlasTexture_87gof")
 }],
 "loop": true,
 "name": &"idle",
@@ -156,13 +156,19 @@ height = 16.0
 
 [node name="NPC" type="CharacterBody2D"]
 scale = Vector2(4, 4)
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_8sd8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u08py")
 animation = &"idle"
-frame_progress = 0.384608
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_twiwe")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
