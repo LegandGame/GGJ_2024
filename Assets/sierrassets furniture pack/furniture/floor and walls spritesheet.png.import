@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://03dy8dsl0r4n"
-path="res://.godot/imported/floor and walls spritesheet.png-e5780650c1e254918dd3b3035c913c05.ctex"
+path="res://.godot/imported/floor and walls spritesheet.png-65bf7ee341fb7e74e7c250933094cb20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sierrassets furniture pack/floors and walls/floor and walls spritesheet.png"
-dest_files=["res://.godot/imported/floor and walls spritesheet.png-e5780650c1e254918dd3b3035c913c05.ctex"]
+source_file="res://Assets/sierrassets furniture pack/furniture/floor and walls spritesheet.png"
+dest_files=["res://.godot/imported/floor and walls spritesheet.png-65bf7ee341fb7e74e7c250933094cb20.ctex"]
 
 [params]
 
