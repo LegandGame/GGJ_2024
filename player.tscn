@@ -161,7 +161,7 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_lmvuh")
 
