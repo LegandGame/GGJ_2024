@@ -12,13 +12,15 @@ func _on_body_entered(body):
 	if body == player:
 		get_node("CanvasLayer").show()
 		update_ui()
+		print(self, interactable, type)
 func _on_body_exited(body):
 	if body == player:
 		get_node("CanvasLayer").hide()
+		interactable = false
 
 
 func _process(delta):
-	if Input.is_action_pressed("interact") and interactable and type == "HACKABLE":
+	if Input.is_action_pressed("interact") and interactable and type == 1:
 		player.velocity *= 0.1
 		hackProgress -= delta
 		if hackProgress <= 0.0:
@@ -26,14 +28,14 @@ func _process(delta):
 
 func hacked():
 	self.process_mode = Node.PROCESS_MODE_DISABLED
-	player.score += value
+	player.update_score(value)
 
 func update_ui():
 	match type:
-		"CACHE":
+		0:
 			interactable = true
 			UI.text = "pick up %s" % [command]
-		"HACKABLE":
+		1:
 			UI.text = "requires %s" % [command]
 			if player.equipped == command:
 				interactable = true
@@ -42,6 +44,7 @@ func update_ui():
 			
 
 func _input(event):
-	if event.is_action_just_pressed("interact") and interactable and type == "CACHE":
-		player.equipped = command
+	if event.is_action_pressed("interact") and interactable and type == 0:
+		print('TEST')
+		player.change_equip(command)
 		interactable = false

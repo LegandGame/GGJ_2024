@@ -63,10 +63,12 @@ func update_health(newHealth : int, setting : bool = false):
 	susBar.value = health
 
 func change_equip(newEquip : String):
-	newEquip = newEquip.capitalize()
 	assert(newEquip in equipDict.keys())
 	equipped = newEquip
 	if equipDict[equipped] == null:
 		equipIcon.texture = null
 	else:
-		equipIcon.texture = equipDict[equipped]
+		var img = Image.new()
+		img.save_png(equipDict[equipped])
+		equipIcon.texture = ImageTexture.create_from_image(img) 
+	print(equipped)

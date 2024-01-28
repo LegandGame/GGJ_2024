@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bc3r8rl7awtft"]
+[gd_scene load_steps=22 format=3 uid="uid://16ldi4e7ppa7"]
 
 [ext_resource type="Script" path="res://NPC.gd" id="1_8sd8m"]
 [ext_resource type="Texture2D" uid="uid://dmd6ws380l76d" path="res://Assets/Free Fantasy Dreamland - Sprites/16x16/Character_007.png" id="2_446yq"]
@@ -155,6 +155,7 @@ radius = 5.0
 height = 16.0
 
 [node name="NPC" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_8sd8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
